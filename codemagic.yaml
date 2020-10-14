@@ -55,7 +55,7 @@ workflows:
       events:
         - push
       branch_patterns:
-        - pattern: DEV?
+        - pattern: '*PREPROD*'
           include: true
           source: true
     scripts:
@@ -71,16 +71,13 @@ workflows:
           -keyalg 'RSA' \
           -keysize 2048 \
           -validity 10000
-      - |
-        # set up local properties
-        echo "flutter.sdk=$HOME/programs/flutter" > "$FCI_BUILD_DIR/android/local.properties"
-      - cd . && flutter packages pub get
-      - cd . && flutter build apk --debug
+      - cd codemagicpoc && flutter packages pub get
+      - cd codemagicpoc && flutter build apk --debug --dart-define=project_env=preprod
     artifacts:
-      - build/**/outputs/**/*.apk
-      - build/**/outputs/**/*.aab
-      - build/**/outputs/**/mapping.txt
-      - flutter_drive.log
+      - codemagicpoc/build/**/outputs/**/*.apk
+      - codemagicpoc/build/**/outputs/**/*.aab
+      - codemagicpoc/build/**/outputs/**/mapping.txt
+      - codemagicpoc/flutter_drive.log
     publishing:
       email:
         recipients:
