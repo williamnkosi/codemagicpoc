@@ -32,7 +32,7 @@ workflows:
           -keysize 2048 \
           -validity 10000
       - ls -l
-      - cd codemagic
+      - cd codemagicpoc
       - flutter packages pub get
       - flutter build apk --debug
     artifacts:
