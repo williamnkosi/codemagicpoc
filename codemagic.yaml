@@ -31,8 +31,9 @@ workflows:
           -keyalg 'RSA' \
           -keysize 2048 \
           -validity 10000
-      - cd . && flutter packages pub get
-      - cd . && flutter build apk --debug
+      - cd codemagic
+      - flutter packages pub get
+      - flutter build apk --debug
     artifacts:
       - build/**/outputs/**/*.apk
       - build/**/outputs/**/*.aab
