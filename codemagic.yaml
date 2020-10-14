@@ -37,10 +37,10 @@ workflows:
       - cd codemagicpoc && flutter packages pub get
       - cd codemagicpoc && flutter build apk --debug
     artifacts:
-      - build/**/outputs/**/*.apk
-      - build/**/outputs/**/*.aab
-      - build/**/outputs/**/mapping.txt
-      - flutter_drive.log
+      - codemagicpoc/build/**/outputs/**/*.apk
+      - codemagicpoc/build/**/outputs/**/*.aab
+      - codemagicpoc/build/**/outputs/**/mapping.txt
+      - codemagicpoc/flutter_drive.log
     publishing:
       email:
         recipients:
