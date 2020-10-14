@@ -32,10 +32,8 @@ workflows:
           -keysize 2048 \
           -validity 10000
       - ls -l
-      - cd codemagicpoc
-      - ls -l
-      - flutter packages pub get
-      - flutter build apk --debug
+      - cd codemagic && flutter packages pub get
+      - cd codemagic && flutter build apk --debug
     artifacts:
       - build/**/outputs/**/*.apk
       - build/**/outputs/**/*.aab
