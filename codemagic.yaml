@@ -34,9 +34,8 @@ workflows:
       - |
         # set up local properties
         echo "flutter.sdk=$HOME/programs/flutter" > "$FCI_BUILD_DIR/android/local.properties"
-      - cd codemagicpoc 
-      - flutter packages pub get
-      - flutter build apk --debug
+      - cd . && flutter packages pub get
+      - cd . && flutter build apk --debug
     artifacts:
       - build/**/outputs/**/*.apk
       - build/**/outputs/**/*.aab
