@@ -33,6 +33,7 @@ workflows:
           -validity 10000
       - ls -l
       - cd codemagicpoc
+      - ls -l
       - flutter packages pub get
       - flutter build apk --debug
     artifacts:
