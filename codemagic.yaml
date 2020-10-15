@@ -35,7 +35,7 @@ workflows:
       - |
         # Build Android
         ls -l
-        cd codemagicpoc && flutter packages pub get
+        codemagicpoc/flutter packages pub get
         cd codemagicpoc && flutter build apk --debug
       - |
         # Build iOS
