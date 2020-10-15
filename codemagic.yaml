@@ -1,6 +1,6 @@
 # Automatically generated on 2020-10-14 UTC from https://codemagic.io/app/5f85c2ce9ccdab7215d00938/settings
 # Note that this configuration is not an exact match to UI settings. Review and adjust as necessary.
-# Added comments
+
 
 workflows:
   dev:
