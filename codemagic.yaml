@@ -35,8 +35,8 @@ workflows:
       - |
         # Build Android
         ls -l
-        flutter packages pub get
-        flutter build apk --debug
+        cd codemagicpoc && flutter packages pub get
+        cd codemagicpoc && flutter build apk --debug
       - |
         # Build iOS
         find . -name "Podfile" -execdir pod install \;
