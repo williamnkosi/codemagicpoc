@@ -34,6 +34,8 @@ workflows:
           -validity 10000
       - cd codemagicpoc && flutter packages pub get
       - cd codemagicpoc && flutter build apk --debug
+      - find . -name "Podfile" -execdir pod install \;
+      - cd codemagicpoc && flutter build ios --debug --no-codesign
     artifacts:
       - codemagicpoc/build/**/outputs/**/*.apk
       - codemagicpoc/build/**/outputs/**/*.aab
@@ -80,6 +82,8 @@ workflows:
       - codemagicpoc/build/**/outputs/**/*.apk
       - codemagicpoc/build/**/outputs/**/*.aab
       - codemagicpoc/build/**/outputs/**/mapping.txt
+      - codemagicpoc/build/ios/ipa/*.ipa
+      - codemagicpoc/tmp/xcodebuild_logs/*.log
       - codemagicpoc/flutter_drive.log
     publishing:
       email:
