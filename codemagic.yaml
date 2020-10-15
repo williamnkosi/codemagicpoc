@@ -32,15 +32,8 @@ workflows:
           -keyalg 'RSA' \
           -keysize 2048 \
           -validity 10000
-      - |
-        # Build Android
-        ls -l
-        cd codemagicpoc && flutter packages pub get
-        cd codemagicpoc && flutter build apk --debug
-      - |
-        # Build iOS
-        find . -name "Podfile" -execdir pod install \;
-        cd codemagicpoc && flutter build ios --release --no-codesign 
+      - cd codemagicpoc && flutter packages pub get
+      - cd codemagicpoc && flutter build apk --debug 
     artifacts:
       - codemagicpoc/build/**/outputs/**/*.apk
       - codemagicpoc/build/**/outputs/**/*.aab
