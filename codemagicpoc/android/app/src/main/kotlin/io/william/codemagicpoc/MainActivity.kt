@@ -1,4 +1,4 @@
-package com.example.codemagicpoc
+package io.william.codemagicpoc
 
 import io.flutter.embedding.android.FlutterActivity
 

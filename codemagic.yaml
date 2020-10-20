@@ -76,9 +76,14 @@ workflows:
           -keysize 2048 \
           -validity 10000
       - cd codemagicpoc && flutter packages pub get
+<<<<<<< HEAD
       - cd codemagicpoc && flutter build apk --debug --dart-define=project_env=preprod
       - find . -name "Podfile" -execdir pod install \;
       - cd codemagicpoc && flutter build ios --release --no-codesign 
+=======
+      - cd codemagicpoc && flutter build apk --release --dart-define=project_env=preprod
+
+>>>>>>> DEV
     artifacts:
       - codemagicpoc/build/**/outputs/**/*.apk
       - codemagicpoc/build/**/outputs/**/*.aab
@@ -120,7 +125,7 @@ workflows:
           -keysize 2048 \
           -validity 10000
       - cd codemagicpoc && flutter packages pub get
-      - cd codemagicpoc && flutter build apk --debug --dart-define=project_env=prod
+      - cd codemagicpoc && flutter build apk --release --dart-define=project_env=prod
     artifacts:
       - codemagicpoc/build/**/outputs/**/*.apk
       - codemagicpoc/build/**/outputs/**/*.aab
