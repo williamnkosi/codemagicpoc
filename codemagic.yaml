@@ -75,7 +75,6 @@ workflows:
         keyPassword=$CM_KEY_ALIAS_PASSWORD
         keyAlias=$CM_KEY_ALIAS_USERNAME
         storeFile=/tmp/keystore.keystore
-        EOF
       - cd codemagicpoc && flutter packages pub get
       - cd codemagicpoc && flutter build apk --release --dart-define=project_env=preprod
     artifacts:
