@@ -76,13 +76,11 @@ workflows:
           -keysize 2048 \
           -validity 10000
       - cd codemagicpoc && flutter packages pub get
-      - cd codemagicpoc && flutter build apk --debug --dart-define=project_env=preprod
+      - cd codemagicpoc && flutter build apk --release --dart-define=project_env=preprod
     artifacts:
       - codemagicpoc/build/**/outputs/**/*.apk
       - codemagicpoc/build/**/outputs/**/*.aab
       - codemagicpoc/build/**/outputs/**/mapping.txt
-      - codemagicpoc/build/ios/ipa/*.ipa
-      - codemagicpoc/tmp/xcodebuild_logs/*.log
       - codemagicpoc/flutter_drive.log
     publishing:
       email:
