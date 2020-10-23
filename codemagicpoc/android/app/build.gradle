@@ -55,7 +55,7 @@ android {
         release {
             storeFile  file('codemagic2keystore.jks')
             storePassword keystoreProperties['storePassword']
-            keyAlias keystoreProperties['KeyAlias']
+            keyAlias keystoreProperties['keyAlias']
             keyPassword keystoreProperties['keyPassword']
         }
     }
